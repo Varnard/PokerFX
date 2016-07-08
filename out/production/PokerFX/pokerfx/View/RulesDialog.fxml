@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" styleClass="rules" stylesheets="@Style.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <GridPane layoutX="172.0" layoutY="162.0" prefHeight="400.0" prefWidth="600.0" styleClass="grid" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="105.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="193.0" minWidth="10.0" prefWidth="98.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="380.0" minWidth="10.0" prefWidth="347.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="145.0" minWidth="10.0" prefWidth="126.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label styleClass="tableheader" text="Name" />
+            <Label styleClass="tableheader" text="Description" GridPane.columnIndex="1" />
+            <Label text="Straight Flush" GridPane.rowIndex="1" />
+            <Label text="Four of a Kind" GridPane.rowIndex="2" />
+            <Label text="4 cards of the same value" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label styleClass="tableheader" text="Example" GridPane.columnIndex="2" />
+            <Label text="5 continuous values of cards of the same color" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="9S TS JS QS KS" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            <Label text="6S 6C 6D 6H 9C" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <Label text="Full House" GridPane.rowIndex="3" />
+            <Label text="3 cards of the same value and 2 cards of same value" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="JC JD JS 4S 4H" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <Label text="Flush" GridPane.rowIndex="4" />
+            <Label text="Straight" GridPane.rowIndex="5" />
+            <Label text="Three of a Kind" GridPane.rowIndex="6" />
+            <Label text="Two Pairs" GridPane.rowIndex="7" />
+            <Label text="Pair" GridPane.rowIndex="8" />
+            <Label text="High Card" GridPane.rowIndex="9" />
+            <Label text="5 cards of the same color" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="5 continuous values of cards" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="3 cards of the same value" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <Label text="2 sets of 2 cards of the same value" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <Label text="2 cards of the same value" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+            <Label text="If nothing of the above is present, highest valued card" GridPane.columnIndex="1" GridPane.rowIndex="9" />
+            <Label text="2D 5D 3D 9D AD" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <Label text="6S 7D 8S 9C TH" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+            <Label text="KD KC KH 5D 3C " GridPane.columnIndex="2" GridPane.rowIndex="6" />
+            <Label text="AD AC QD QS 5C" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+            <Label text="JD JC KS 2D 7S" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+            <Label text="2C 8D 5H JS AS" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+         </children>
+      </GridPane>
+      <Label layoutX="14.0" layoutY="14.0" prefHeight="21.0" prefWidth="105.0" styleClass="goal" text="Goal:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="2.0" layoutY="80.0" styleClass="tabletitle" text="Value of Hand:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="85.0" />
+      <Label layoutX="131.0" layoutY="14.0" styleClass="goal" text="To have better value of cards in your hand" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="10.0" />
+      <Label layoutX="10.0" layoutY="38.0" text="Card values:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="40.0" />
+      <Label layoutX="131.0" layoutY="38.0" text="2, 3, 4, 5, 6, 7, 8, 9, T(10), J(Jack), Q(Queen), K(King), A(Ace)" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="40.0" />
+      <Label layoutX="8.0" layoutY="55.0" text="Card colors:" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="60.0" />
+      <Label layoutX="129.0" layoutY="55.0" text="H(Hearts), D(Diamonds), C(Clubs), S(Spades)" AnchorPane.leftAnchor="140.0" AnchorPane.topAnchor="60.0" />
+   </children>
+</AnchorPane>

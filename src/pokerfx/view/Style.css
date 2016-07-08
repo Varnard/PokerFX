@@ -1,0 +1,120 @@
+.background{
+    -fx-background-color: #FFAB4C;
+    -fx-padding: 0;
+}
+
+.menu-bar{
+-fx-background-color: #BF8039;
+}
+
+.menu-bar {
+    -fx-background-color: #BF8039;
+    -fx-border-color: derive(#402B13,15%);
+    -fx-border-width: 2 2 4 2;
+}
+
+.context-menu {
+    -fx-background-color: #BF8039;
+}
+
+.menu-bar .label {
+    -fx-text-fill: #402B13;
+    -fx-font-weight: bold;
+}
+
+.menu .left-container {
+    -fx-background-color: #BF8039;
+}
+
+.nav{
+    -fx-background-color: derive(#E59A44,10%);
+    -fx-border-color: derive(#402B13,20%);
+    -fx-border-width: 0 3 2 2;
+    -fx-padding: 5;
+}
+
+.button{
+    -fx-background-color: derive(#BF8039,10%);
+    -fx-text-fill: #402B13;
+    -fx-border-color: derive(#402B13,30%);
+    -fx-border-width: 2;
+    -fx-border-radius: 4;
+    -fx-font-weight: bold;
+}
+
+.cardText {
+    -fx-text-fill: #402B13;
+    -fx-font-size: 20pt;
+    -fx-alignment: center;
+}
+
+.hand
+{
+-fx-background-color: derive(#FFAB4C,20%);
+    -fx-border-color: derive(#402B13,30%);
+    -fx-border-width: 2;
+    -fx-hgap: 0;
+    -fx-vgap: 1;
+    -fx-grid-lines-visible: true;
+    -fx-alignment: center;
+}
+
+.split-pane *.split-pane-divider {
+    -fx-border-color:#402B13;
+    -fx-padding: 0;
+}
+
+.dialog{
+    -fx-background-color: #FFAB4C;
+    -fx-border-color: derive(#402B13,10%);
+    -fx-border-width: 2;
+    -fx-font-size: 18pt;
+}
+
+.dialog .button{
+
+    -fx-font-size: 12pt;
+}
+
+.rules{
+    -fx-background-color: #FFAB4C;
+    -fx-border-color: #402B13;
+    -fx-border-width: 4;
+}
+
+
+
+.rules .tabletitle{
+    -fx-font-size: 12pt;
+      -fx-font-weight: bold;
+}
+
+.rules .tableheader{
+    -fx-font-size: 10pt;
+    -fx-font-weight: bold;
+}
+
+.rules .label{
+    -fx-font-size: 10pt;
+}
+
+.rules .goal{
+    -fx-font-size: 13pt;
+}
+
+.rules .grid
+{
+-fx-background-color: derive(#FFAB4C,20%);
+    -fx-border-color: derive(#402B13,40%);
+    -fx-border-width: 2;
+    -fx-hgap: 0;
+    -fx-vgap: 1;
+    -fx-grid-lines-visible: true;
+    -fx-alignment: center;
+}
+
+.rules .grid .label
+{
+    -fx-padding:5;
+    -fx-font-size: 10pt;
+}
