@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.text.*?>
 <?import javafx.scene.control.*?>
 <?import java.lang.*?>
@@ -21,13 +23,13 @@
       </AnchorPane>
    </left>
    <center>
-      <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
+      <AnchorPane fx:id="table" prefHeight="200.0" prefWidth="200.0" styleClass="background" BorderPane.alignment="CENTER">
          <children>
             <SplitPane dividerPositions="0.5" orientation="VERTICAL" prefHeight="400.0" prefWidth="520.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
               <items>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background">
                      <children>
-                        <GridPane prefHeight="196.0" prefWidth="518.0" styleClass="hand" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <GridPane alignment="CENTER" prefHeight="196.0" prefWidth="518.0" styleClass="hand" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
                            <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -39,18 +41,29 @@
                               <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                            </rowConstraints>
                            <children>
-                              <Label fx:id="black1" styleClass="cardText" text="Label" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="black2" styleClass="cardText" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="black3" styleClass="cardText" text="Label" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="black4" styleClass="cardText" text="Label" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="black5" styleClass="cardText" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                              <ImageView fx:id="black1" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="black2" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="black3" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="black4" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="black5" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                            </children>
+                           <effect>
+                              <SepiaTone level="0.5" />
+                           </effect>
                         </GridPane>
+                        <Label layoutX="227.0" layoutY="14.0" prefHeight="39.0" prefWidth="68.0" text="Black" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="10.0">
+                           <styleClass>
+                              <String fx:value="black" />
+                              <String fx:value="player" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="blackChangesLabel" layoutX="14.0" layoutY="21.0" styleClass="changes" text="Changes: " AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="15.0" />
+                        <Label fx:id="blackScoreLabel" layoutX="473.0" layoutY="21.0" styleClass="score" text="Label" AnchorPane.rightAnchor="35.0" AnchorPane.topAnchor="15.0" />
                      </children>
                   </AnchorPane>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0" styleClass="background">
                      <children>
-                        <GridPane layoutX="143.0" layoutY="53.0" prefHeight="196.0" prefWidth="518.0" styleClass="hand" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <GridPane layoutX="143.0" layoutY="53.0" prefHeight="196.0" prefWidth="518.0" styleClass="hand" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columnConstraints>
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                               <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -62,13 +75,24 @@
                             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                           </rowConstraints>
                            <children>
-                              <Label fx:id="white1" styleClass="cardText" text="Label" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="white2" styleClass="cardText" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="white3" styleClass="cardText" text="Label" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="white4" styleClass="cardText" text="Label" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
-                              <Label fx:id="white5" styleClass="cardText" text="Label" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="TOP" />
+                              <ImageView fx:id="white1" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="white2" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="white3" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="white4" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="3" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                              <ImageView fx:id="white5" onMouseClicked="#select" pickOnBounds="true" preserveRatio="true" styleClass="card" GridPane.columnIndex="4" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
                            </children>
+                           <effect>
+                              <SepiaTone level="0.5" />
+                           </effect>
                         </GridPane>
+                        <Label layoutX="244.0" layoutY="152.0" prefHeight="39.0" prefWidth="76.0" text="White" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0">
+                           <styleClass>
+                              <String fx:value="white" />
+                              <String fx:value="player" />
+                           </styleClass>
+                        </Label>
+                        <Label fx:id="whiteChangesLabel" layoutX="14.0" layoutY="145.0" styleClass="changes" text="Changes: " AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="10.0" />
+                        <Label fx:id="whiteScoreLabel" layoutX="473.0" layoutY="149.0" styleClass="score" text="Label" AnchorPane.bottomAnchor="15.0" AnchorPane.rightAnchor="35.0" />
                      </children>
                   </AnchorPane>
               </items>
