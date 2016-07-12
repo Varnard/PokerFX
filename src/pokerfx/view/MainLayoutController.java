@@ -227,6 +227,7 @@ public class MainLayoutController {
 
             if (selected.getId().contains("white")) {
                 if (whiteChanges > 0) {
+                    animateCardChange(selected);
                     String newCard = Deck.giveOne();
                     selected.setImage(imageMap.get(newCard));
                     int i = Integer.parseInt(String.valueOf(selected.getId().charAt(5))) - 1;
@@ -234,7 +235,7 @@ public class MainLayoutController {
                     whiteHand.add(i, newCard);
                     whiteChanges--;
                     whiteChangesLabel.setText("Changes: "+whiteChanges);
-                    //animateCardChange(selected);
+
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setGraphic(null);
@@ -251,6 +252,7 @@ public class MainLayoutController {
                 }
             } else if (selected.getId().contains("black")) {
                 if (blackChanges > 0) {
+                    animateCardChange(selected);
                     String newCard = Deck.giveOne();
                     selected.setImage(imageMap.get(newCard));
                     int i = Integer.parseInt(String.valueOf(selected.getId().charAt(5))) - 1;
@@ -258,6 +260,7 @@ public class MainLayoutController {
                     blackHand.add(i, newCard);
                     blackChanges--;
                     blackChangesLabel.setText("Changes: "+blackChanges);
+
                 } else {
                     Alert alert = new Alert(Alert.AlertType.WARNING);
                     alert.setGraphic(null);
@@ -280,7 +283,7 @@ public class MainLayoutController {
     @FXML
     public void handleCheckCards()
     {
-        String result = Poker.compareHands(whiteHand,blackHand);
+   String result = Poker.compareHands(whiteHand,blackHand);
 
         if (result.contains("White")){
             whiteScore++;
@@ -325,22 +328,34 @@ public class MainLayoutController {
 
     public void animateCardChange(ImageView selected)
     {
-        ImageView old = new ImageView(selected.getImage());
+        final Image oldImage=selected.getImage();
+        ImageView old = new ImageView(oldImage);
         table.getChildren().add(old);
+        selected.toFront();
+        int i=1;
+        int j=0;
+        if (selected.getId().contains("black"))
+        {
+            i=-1;
+            j=50;
+        }
+
+        old.setLayoutX(selected.getLayoutX());
+        old.setLayoutY(selected.getLayoutY()+selected.getParent().getParent().getParent().getLayoutY());
 
         TranslateTransition translateTransition =
-                new TranslateTransition(Duration.millis(2000), selected);
+                new TranslateTransition(Duration.millis(1500), selected);
         translateTransition.setFromX(-500);
         translateTransition.setToX(0);
-        translateTransition.setFromY(-300);
+        translateTransition.setFromY(300*i);
         translateTransition.setToY(-0);
         translateTransition.setCycleCount(1);
         RotateTransition rotateTransition =
-                new RotateTransition(Duration.millis(2000), selected);
+                new RotateTransition(Duration.millis(1500), selected);
         rotateTransition.setByAngle(360f);
         rotateTransition.setCycleCount(1);
         ScaleTransition scaleTransition =
-                new ScaleTransition(Duration.millis(2000), selected);
+                new ScaleTransition(Duration.millis(1500), selected);
         scaleTransition.setFromX(1.5f);
         scaleTransition.setFromY(1.5f);
         scaleTransition.setToX(1.3f);
@@ -357,18 +372,18 @@ public class MainLayoutController {
         parallelTransition.play();
 
         TranslateTransition translateTransition2 =
-                new TranslateTransition(Duration.millis(2000), old);
-        translateTransition2.setFromX(selected.getX());
-        translateTransition2.setToX(500);
-        translateTransition2.setFromY(selected.getY());
-        translateTransition2.setToY(-300);
+                new TranslateTransition(Duration.millis(1500), old);
+        translateTransition2.setFromX(0);
+        translateTransition2.setToX(700);
+        translateTransition2.setFromY(j);
+        translateTransition2.setToY(-400*i);
         translateTransition2.setCycleCount(1);
         RotateTransition rotateTransition2 =
-                new RotateTransition(Duration.millis(2000), old);
+                new RotateTransition(Duration.millis(1500), old);
         rotateTransition2.setByAngle(360f);
         rotateTransition2.setCycleCount(1);
         ScaleTransition scaleTransition2 =
-                new ScaleTransition(Duration.millis(2000), old);
+                new ScaleTransition(Duration.millis(1500), old);
         scaleTransition2.setFromX(1.3f);
         scaleTransition2.setFromY(1.3f);
         scaleTransition2.setToX(1.5f);
